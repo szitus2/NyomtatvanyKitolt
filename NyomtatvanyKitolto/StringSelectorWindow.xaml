@@ -1,0 +1,20 @@
+﻿<Window x:Class="NyomtatvanyKitolto.StringSelectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NyomtatvanyKitolto"
+        mc:Ignorable="d"
+        Title="StringSelectorWindow" Height="450" Width="288.249">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView Name="StringListView" Grid.Row="0"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="Ok" Margin="5" Padding="20,5,20,5" IsDefault="True" Click="Button_Click" />
+            <Button Content="Mégsem" Margin="5" Padding="20,5,20,5" Click="Button_Click_1" />
+        </StackPanel>
+    </Grid>
+</Window>

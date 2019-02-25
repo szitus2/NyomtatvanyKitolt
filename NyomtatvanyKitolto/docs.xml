@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ArrayOfDocumentDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DocumentDescription>
+    <GraphicName>btv</GraphicName>
+    <XmlFileName>btvdgs.xml</XmlFileName>
+    <Name>Belföldi Tértivevény</Name>
+  </DocumentDescription>
+  <DocumentDescription>
+    <GraphicName>kkf</GraphicName>
+    <XmlFileName>kkfdgs.xml</XmlFileName>
+    <Name>Könyvelt Küldemény Feladólap</Name>
+  </DocumentDescription>
+</ArrayOfDocumentDescription>

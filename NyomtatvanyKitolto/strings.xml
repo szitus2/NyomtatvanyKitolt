@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<dictionary>
+  <item>
+    <key>
+      <string>Feladó</string>
+    </key>
+    <value>
+      <ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <string>MWW Kft.
+1046 Budapest, Erdősor út 24.</string>
+      </ArrayOfString>
+    </value>
+  </item>
+  <item>
+    <key>
+      <string>Címzett</string>
+    </key>
+    <value>
+      <ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <string>Scadanet Kft.
+1113 Budapest, Cirmos u. 8.</string>
+        <string>Univer Zrt.
+6000 Kecskemét, Mindszenty körút 10.</string>
+        <string>Nestle Hungária Zrt.
+Pénzügyi osztály
+1091 Budapest, Lechner Ödön fasor 23.</string>
+      </ArrayOfString>
+    </value>
+  </item>
+</dictionary>

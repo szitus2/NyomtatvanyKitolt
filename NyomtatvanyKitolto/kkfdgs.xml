@@ -1,0 +1,116 @@
+﻿<?xml version="1.0"?>
+<ArrayOfDataGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataGroup xsi:type="StringDataGroup">
+    <FontName>Arial</FontName>
+    <Name>Feladó</Name>
+    <ScreenPosition>
+      <X>18</X>
+      <Y>17</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>-44</X>
+      <Y>28</Y>
+    </PrintPosition>
+    <TbString>MWW Kft.
+1046 Budapest, Erdősor út 24.</TbString>
+  </DataGroup>
+  <DataGroup xsi:type="StringDataGroup">
+    <FontName>Arial</FontName>
+    <Name>Címzett</Name>
+    <ScreenPosition>
+      <X>18</X>
+      <Y>46</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>-44</X>
+      <Y>54</Y>
+    </PrintPosition>
+    <TbString>Nestle Hungária Zrt.
+Pénzügyi osztály
+1091 Budapest, Lechner Ödön fasor 23.</TbString>
+  </DataGroup>
+  <DataGroup xsi:type="CheckDataGroup">
+    <FontName>Arial</FontName>
+    <Name>Ajánlott</Name>
+    <ScreenPosition>
+      <X>19.7</X>
+      <Y>34</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>-41</X>
+      <Y>43</Y>
+    </PrintPosition>
+    <CheckString>X</CheckString>
+    <Checked>true</Checked>
+  </DataGroup>
+  <DataGroup xsi:type="CheckDataGroup">
+    <FontName>Arial</FontName>
+    <Name>Tértivevény</Name>
+    <ScreenPosition>
+      <X>43.2</X>
+      <Y>34</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>-9</X>
+      <Y>43</Y>
+    </PrintPosition>
+    <CheckString>X</CheckString>
+    <Checked>true</Checked>
+  </DataGroup>
+  <DataGroup xsi:type="CheckDataGroup">
+    <FontName>Arial</FontName>
+    <Name>Értéknyilvánítás</Name>
+    <ScreenPosition>
+      <X>70.3</X>
+      <Y>34</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>28</X>
+      <Y>43</Y>
+    </PrintPosition>
+    <CheckString>X</CheckString>
+    <Checked>false</Checked>
+  </DataGroup>
+  <DataGroup xsi:type="CheckDataGroup">
+    <FontName>Arial</FontName>
+    <Name>Hivatalos irat</Name>
+    <ScreenPosition>
+      <X>19.7</X>
+      <Y>39</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>-41</X>
+      <Y>48</Y>
+    </PrintPosition>
+    <CheckString>X</CheckString>
+    <Checked>false</Checked>
+  </DataGroup>
+  <DataGroup xsi:type="CheckDataGroup">
+    <FontName>Arial</FontName>
+    <Name>Csomag</Name>
+    <ScreenPosition>
+      <X>43.2</X>
+      <Y>39</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>-9</X>
+      <Y>48</Y>
+    </PrintPosition>
+    <CheckString>X</CheckString>
+    <Checked>false</Checked>
+  </DataGroup>
+  <DataGroup xsi:type="CheckDataGroup">
+    <FontName>Arial</FontName>
+    <Name>Címzett kezébe</Name>
+    <ScreenPosition>
+      <X>70.3</X>
+      <Y>39</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>28</X>
+      <Y>48</Y>
+    </PrintPosition>
+    <CheckString>X</CheckString>
+    <Checked>false</Checked>
+  </DataGroup>
+</ArrayOfDataGroup>
