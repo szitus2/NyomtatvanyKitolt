@@ -118,11 +118,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="btvdgs.xml" />
-    <Resource Include="dgs.xml" />
-    <Resource Include="docs.xml" />
-    <Resource Include="kkfdgs.xml" />
-    <Resource Include="strings.xml" />
+    <Resource Include="Xml\btvdgs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Xml\dgs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Xml\docs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Xml\kkfdgs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Xml\strings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
