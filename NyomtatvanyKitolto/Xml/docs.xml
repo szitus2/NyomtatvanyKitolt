@@ -10,4 +10,9 @@
     <XmlFileName>kkfdgs.xml</XmlFileName>
     <Name>Könyvelt Küldemény Feladólap</Name>
   </DocumentDescription>
+  <DocumentDescription>
+    <GraphicName>LA4</GraphicName>
+    <XmlFileName>la4dgs.xml</XmlFileName>
+    <Name>LA4 boríték</Name>
+  </DocumentDescription>
 </ArrayOfDocumentDescription>

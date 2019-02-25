@@ -1,0 +1,34 @@
+﻿<?xml version="1.0"?>
+<ArrayOfDataGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataGroup xsi:type="StringDataGroup">
+    <FontName>Arial</FontName>
+    <FontScale>1.2</FontScale>
+    <Name>Feladó</Name>
+    <ScreenPosition>
+      <X>33</X>
+      <Y>75</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>-20</X>
+      <Y>65</Y>
+    </PrintPosition>
+    <TbString>MWW Kft.
+1046 Budapest, Erdősor út 24.</TbString>
+  </DataGroup>
+  <DataGroup xsi:type="StringDataGroup">
+    <FontName>Arial</FontName>
+    <FontScale>0.7</FontScale>
+    <Name>Címzett</Name>
+    <ScreenPosition>
+      <X>23</X>
+      <Y>30</Y>
+    </ScreenPosition>
+    <PrintPosition>
+      <X>-35</X>
+      <Y>28</Y>
+    </PrintPosition>
+    <TbString>Nestle Hungária Zrt.
+Pénzügyi osztály
+1091 Budapest, Lechner Ödön fasor 23.</TbString>
+  </DataGroup>
+</ArrayOfDataGroup>

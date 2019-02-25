@@ -64,5 +64,11 @@
   <ItemGroup>
     <None Include="kkf.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LA4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LA4.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

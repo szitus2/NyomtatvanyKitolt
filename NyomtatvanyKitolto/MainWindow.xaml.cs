@@ -37,7 +37,7 @@ namespace NyomtatvanyKitolto
 
         private void LoadDocuments()
         {
-            FileStream fs = new FileStream("docs.xml", FileMode.Open);
+            FileStream fs = new FileStream(@"Xml\docs.xml", FileMode.Open);
             XmlSerializer xs = new XmlSerializer(typeof(List<DocumentDescription>));
             Documents = xs.Deserialize(fs) as List<DocumentDescription>;
             fs.Close();
@@ -45,7 +45,7 @@ namespace NyomtatvanyKitolto
             DocsList.ItemsSource = Documents;
 
 
-            fs = new FileStream("strings.xml", FileMode.Open);
+            fs = new FileStream(@"Xml\strings.xml", FileMode.Open);
             xs = new XmlSerializer(typeof(SerializableDictionary<string, List<string>>));
             Strings = xs.Deserialize(fs) as SerializableDictionary<string, List<string>>;
             fs.Close();
@@ -132,7 +132,7 @@ namespace NyomtatvanyKitolto
         private void DocsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DocumentDescription selDoc = DocsList.SelectedItem as DocumentDescription;
-            FileStream fs = new FileStream(selDoc.XmlFileName, FileMode.Open);
+            FileStream fs = new FileStream(@"Xml\" + selDoc.XmlFileName, FileMode.Open);
             XmlSerializer xs = new XmlSerializer(typeof(List<DataGroup>));
             List<DataGroup> dataGroups = xs.Deserialize(fs) as List<DataGroup>;
             fs.Close();
