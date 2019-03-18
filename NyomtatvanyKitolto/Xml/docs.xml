@@ -4,15 +4,18 @@
     <GraphicName>btv</GraphicName>
     <XmlFileName>btvdgs.xml</XmlFileName>
     <Name>Belföldi Tértivevény</Name>
+    <PrintOrientation>Portrait</PrintOrientation>
   </DocumentDescription>
   <DocumentDescription>
     <GraphicName>kkf</GraphicName>
     <XmlFileName>kkfdgs.xml</XmlFileName>
     <Name>Könyvelt Küldemény Feladólap</Name>
+    <PrintOrientation>Portrait</PrintOrientation>
   </DocumentDescription>
   <DocumentDescription>
     <GraphicName>LA4</GraphicName>
     <XmlFileName>la4dgs.xml</XmlFileName>
     <Name>LA4 boríték</Name>
+    <PrintOrientation>Landscape</PrintOrientation>
   </DocumentDescription>
 </ArrayOfDocumentDescription>

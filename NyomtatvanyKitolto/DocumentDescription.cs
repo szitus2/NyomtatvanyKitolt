@@ -11,8 +11,8 @@ namespace NyomtatvanyKitolto
     public class DocumentDescription
     {
         public string Name { get; set; }
-        public string GraphicName;
-        
+        public string PrintOrientation = "Portrait";
+        public string GraphicName;        
         public BitmapImage Graphic
         { 
             get

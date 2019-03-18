@@ -190,6 +190,12 @@ namespace NyomtatvanyKitolto
                     ss.Add(sdg.TbString);
                 }
             }
+
+            FileStream fs = new FileStream(@"Xml\strings.xml", FileMode.Create);
+            XmlSerializer xs = new XmlSerializer(typeof(SerializableDictionary<string, List<string>>));
+            xs.Serialize(fs, Strings);
+            fs.Close();
+            fs.Dispose();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -206,16 +212,36 @@ namespace NyomtatvanyKitolto
             
             
             PrintDialog pd = new PrintDialog();
+            if(doc.PrintOrientation.ToLower() == "landscape")
+            {
+                pd.PrintTicket.PageOrientation = PageOrientation.Landscape;
+            } 
+            else
+            {
+                pd.PrintTicket.PageOrientation = PageOrientation.Portrait;
+            }
+            pd.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA4);
             if (pd.ShowDialog() ?? false)
             {
+                if (doc.PrintOrientation.ToLower() == "landscape")
+                {
+                    pd.PrintTicket.PageOrientation = PageOrientation.Landscape;
+                }
+                else
+                {
+                    pd.PrintTicket.PageOrientation = PageOrientation.Portrait;
+                }
+                pd.PrintTicket.PageMediaSize = new PageMediaSize(PageMediaSizeName.ISOA4);
+                MessageBox.Show("Kérem helyezze be a nyomtatványt " + doc.PrintOrientation + " tájolással. \nHa kész, nyomja meg az OK gombot.", "Dokumentum tájolás", MessageBoxButton.OK, MessageBoxImage.Information);
                 PrintQueue pq = pd.PrintQueue;
                 PrintCapabilities pc = pq.GetPrintCapabilities();
                 DrawingVisual vis = new DrawingVisual();
                 DrawingContext dc = vis.RenderOpen();
 
+                
                 double stx = (pc.OrientedPageMediaWidth ?? 870) / 2;
                 double dsty = 0;// pc.PageImageableArea.OriginHeight;
-
+                
                 double defaultFontSize = 14;
                 double mmphi = 0.254; 
 
