@@ -154,7 +154,14 @@ namespace NyomtatvanyKitolto
             //MessageBox.Show("!"+b.Tag.ToString()+"!");
             StringDataGroup sdg = DataGroups[b.Tag.ToString()] as StringDataGroup;
             StringSelectorWindow ssw = new StringSelectorWindow();
-            ssw.StringListView.ItemsSource = Strings[b.Tag.ToString()];
+            try
+            {
+                ssw.StringListView.ItemsSource = Strings[b.Tag.ToString()];
+            }
+            catch
+            {
+                return;
+            }
             if (ssw.ShowDialog() ?? false)
             {
                 string s = ssw.StringListView.SelectedItem as string;

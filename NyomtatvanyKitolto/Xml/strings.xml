@@ -27,4 +27,14 @@ Pénzügyi osztály
       </ArrayOfString>
     </value>
   </item>
+  <item>
+    <key>
+      <string>Címzett Boríték</string>
+    </key>
+    <value>
+      <ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        
+      </ArrayOfString>
+    </value>
+  </item>
 </dictionary>
