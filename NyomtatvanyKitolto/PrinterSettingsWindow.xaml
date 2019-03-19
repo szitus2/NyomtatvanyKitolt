@@ -1,0 +1,48 @@
+﻿<Window x:Class="NyomtatvanyKitolto.PrinterSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NyomtatvanyKitolto"
+        mc:Ignorable="d"
+        Title="PrinterSettingsWindow" Height="210.427" Width="384.924">
+    <Window.Resources>
+        <local:PrinterSettings x:Key="PrintSet"></local:PrinterSettings>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="10,10,0,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Nyomtató: "/>
+                <TextBlock Text="{Binding Name, Source={StaticResource PrintSet}}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Description, Source={StaticResource PrintSet}}" FontSize="9"  />
+            </StackPanel>
+        </StackPanel>
+        <GroupBox Grid.Row="1" Header="Nyomtatási eltolás" Padding="5" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <StackPanel  HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Label Content="X eltolás: "/>
+                    <TextBox x:Name="XOffsetTextBox" Width="50" Text="{Binding XOffset, Source={StaticResource PrintSet}}" />
+                </StackPanel>
+                <StackPanel  HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Label Content="Y eltolás: "/>
+                    <TextBox x:Name="YOffsetTextBox" Width="50" Text="{Binding YOffset, Source={StaticResource PrintSet}}" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="5
+              " >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button Content="OK" Padding="20,5,20,5" Margin="0,0,10,0" IsDefault="True" Click="Ok_Button_Click" />
+                <Button Content="Mégsem" Padding="20,5,20,5" IsCancel="True" Click="Cancel_Button_Click" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

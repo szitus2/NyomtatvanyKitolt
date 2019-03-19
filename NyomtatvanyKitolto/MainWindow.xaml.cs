@@ -28,6 +28,10 @@ namespace NyomtatvanyKitolto
         public List<DocumentDescription> Documents;
         public Dictionary<string, DataGroup> DataGroups;
         public SerializableDictionary<string, List<string>> Strings;
+        public SerializableDictionary<string, PrinterSettings> Printers;
+
+
+        public PrinterSettings ActualPrinterSettings { get; set; }
 
         public MainWindow()
         {
@@ -42,21 +46,26 @@ namespace NyomtatvanyKitolto
             Documents = xs.Deserialize(fs) as List<DocumentDescription>;
             fs.Close();
             fs.Dispose();
-            DocsList.ItemsSource = Documents;
-
-
+            //DocsList.ItemsSource = Documents;
+            
             fs = new FileStream(@"Xml\strings.xml", FileMode.Open);
             xs = new XmlSerializer(typeof(SerializableDictionary<string, List<string>>));
             Strings = xs.Deserialize(fs) as SerializableDictionary<string, List<string>>;
             fs.Close();
             fs.Dispose();
+            
+            fs = new FileStream(@"Xml\printer.xml", FileMode.Open);
+            xs = new XmlSerializer(typeof(SerializableDictionary<string, PrinterSettings>));
+            Printers = xs.Deserialize(fs) as SerializableDictionary<string, PrinterSettings>;
+            fs.Close();
+            fs.Dispose();
+            
             DocsList.ItemsSource = Documents;
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+
 
             //DisplayDoc.Visibility = Visibility.Collapsed;
 
@@ -126,7 +135,15 @@ namespace NyomtatvanyKitolto
             file.Close();
             file.Dispose(); //*/
 
-
+            /*
+            Printers = new SerializableDictionary<string, PrinterSettings>();
+            Printers.Add("Default", new PrinterSettings());
+            
+            FileStream file = new FileStream(@"Xml\printer.xml", FileMode.Create);
+            XmlSerializer xs = new XmlSerializer(typeof(SerializableDictionary<string, PrinterSettings>));
+            xs.Serialize(file, Printers);
+            file.Close();
+            file.Dispose(); //*/
         }
 
         private void DocsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -237,10 +254,19 @@ namespace NyomtatvanyKitolto
                 PrintCapabilities pc = pq.GetPrintCapabilities();
                 DrawingVisual vis = new DrawingVisual();
                 DrawingContext dc = vis.RenderOpen();
+                string prn = pq.Name;
+                PrinterSettings ps;
+                if (Printers.ContainsKey(prn))
+                {
+                    ps = Printers[prn];
+                }
+                else
+                {
+                    ps = Printers["Default"];
+                }
 
-                
-                double stx = (pc.OrientedPageMediaWidth ?? 870) / 2;
-                double dsty = 0;// pc.PageImageableArea.OriginHeight;
+                double stx = ps.XOffset + (pc.OrientedPageMediaWidth ?? 870) / 2;
+                double dsty = ps.YOffset + pc.PageImageableArea.OriginHeight;
                 
                 double defaultFontSize = 14;
                 double mmphi = 0.254; 
@@ -272,6 +298,42 @@ namespace NyomtatvanyKitolto
                 dc.Close();
 
                 pd.PrintVisual(vis, doc.Name);
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            PrintDialog pd = new PrintDialog();
+            if (pd.ShowDialog() ?? false == true )
+            {
+                string prn = pd.PrintQueue.FullName;
+                PrinterSettings ps;
+                if (Printers.ContainsKey(prn))
+                {
+                    ps = Printers[prn];
+                }
+                else
+                {
+                    ps = new PrinterSettings();
+                    ps.Name = prn;
+                    ps.Description = pd.PrintQueue.Description;
+                    Printers.Add(prn, ps);
+                }
+                PrinterSettingsWindow psw = new PrinterSettingsWindow();
+                PrinterSettings ps1 = psw.Resources["PrintSet"] as PrinterSettings;
+                ps1.Name = ps.Name;
+                ps1.Description = ps.Description;
+                ps1.XOffset = ps.XOffset;
+                ps1.YOffset = ps.YOffset;
+                if (psw.ShowDialog() ?? false)
+                {
+                    Printers[prn] = ps1;
+                    FileStream fs = new FileStream(@"Xml\printer.xml", FileMode.Create);
+                    XmlSerializer xs = new XmlSerializer(typeof(SerializableDictionary<string, PrinterSettings>));
+                    xs.Serialize(fs, Printers);
+                    fs.Close();
+                    fs.Dispose();
+                }
             }
         }
     }

@@ -87,6 +87,7 @@
                 <Grid Grid.Row="0" >
                     <StackPanel Orientation="Horizontal" Background="FloralWhite">
                         <Button Content="Nyomtat" Padding="20,5,20,5" Margin="5" Click="Button_Click_3"/>
+                        <Button Content="Nyomtatás beállítás" Padding="20,5,20,5" Margin="5" Click="Button_Click_4"/>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="1" >

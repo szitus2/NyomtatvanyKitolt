@@ -59,6 +59,10 @@
     </ApplicationDefinition>
     <Compile Include="CheckDataGroup.cs" />
     <Compile Include="DataGroupTemplateSelector.cs" />
+    <Compile Include="PrinterSettings.cs" />
+    <Compile Include="PrinterSettingsWindow.xaml.cs">
+      <DependentUpon>PrinterSettingsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrintVisual.cs" />
     <Compile Include="SerializableDictionary.cs" />
     <Compile Include="StringDataGroup.cs" />
@@ -80,6 +84,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PrinterSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StringSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +136,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\kkfdgs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\printer.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\strings.xml">
